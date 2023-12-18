@@ -1,0 +1,154 @@
+<!-- 
+Name: Thotagamuwa Widanage Inuka Pasandul Perera
+ID: 20221267, w1954040
+Group: O-2
+Role: Student 3
+
+ -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cricket Quiz</title>
+
+    <!-- linked external stylesheet -->
+    <link rel="stylesheet" href="quizStyles.css">
+
+    <!-- linked external javascript file with functionality for the quiz-->
+    <script src="quizQuestions.js"></script>
+
+    <!-- linked external javascript file containing a array of questions for the quiz. -->
+    <script src="quizScript.js"></script>
+
+</head>
+
+<body>
+
+    <!-- container div for quiz styling purposes -->
+    <div class="mainContainer">
+
+
+        <!-- navbar that student 2 made -->
+        <div class="nav">
+            <nav>
+                <a href="studentDetails.html">About Us</a>
+                <a href="../saadik/Student_4_1.html">Sitemap</a>
+                <a href="../yadurshan/comment.html">Comments</a>
+                <a href="Quiz.html" class="active">Quiz</a>
+                <a href="../nisidhu/shoppage/shop.html">Shop</a>
+                <a href="../saadik/Student_4_2.html">Gallery</a>
+                <a href="../yadurshan/Homepage.html">Home</a>
+
+                <a id="company_name">Cricket Gladiators</a>
+
+                <img style="border-radius: 0;" src="images/logo.jpg" alt="logo" height="63">
+            </nav>
+        </div>
+
+
+
+        <!-- div to make a card effect -->
+        <div id="quizCard">
+            <h1 id="welcomeMsg">Welcome To The<br>Cricket Quiz!</h1>
+
+            <!-- button to show instructions -->
+            <button id="instructions_btn" class="buttons" onclick="instructions();"><b>Show Instructions</b></button>
+
+
+            <!-- hidden instuctions only visible when the "show instructions" button is clicked -->
+            <div id="instructions" hidden>
+
+                <h1 id="instructionsHeading">Instructions</h1>
+                <ul id="instructionList">
+                    <li>
+                        <h2>There are 10 questions in the quiz.</h2>
+                    </li>
+                    <li>
+                        <h2>You have 90 seconds to complete the quiz.</h2>
+                    </li>
+                    <li>
+                        <h2>Each correct answer will be rewarded one point.</h2>
+                    </li>
+                    <li>
+                        <h2>Your current score and time remaining will be at the top of the screen.</h2>
+                    </li>
+                    <li>
+                        <h2>Click the "Start" button to start. Good Luck!</h2>
+                    </li>
+                </ul>
+
+                <!-- button to start quiz after reading instructions -->
+                <button id="start_btn" class="buttons" onclick="start();"><b>Start</b></button>
+            </div>
+
+
+
+            <!-- div that holds all elements inside the quiz card -->
+            <div id="questionsContainer" hidden>
+
+                <!-- information display box containing the current question, current score and time remaining -->
+                <div class="infoDisplay">
+                    <span id="score">Score: 0</span>
+                    <span id="timer">Time Remaining: 90</span><br><br>
+                    <div id="question"></div>
+                </div><br>
+
+                <!-- radio buttons used to display multiple answers to user -->
+                <div id="answersContainer">
+
+                    <input type="radio" name="answer_radio" id="answer1">
+                    <label for="answer1"></label><br>
+                    <input type="radio" name="answer_radio" id="answer2">
+                    <label for="answer2"></label><br>
+                    <input type="radio" name="answer_radio" id="answer3">
+                    <label for="answer3"></label><br>
+                    <input type="radio" name="answer_radio" id="answer4">
+                    <label for="answer4"></label><br>
+                </div>
+
+                <!-- button used to show next quesition -->
+                <button id="next_btn" class="buttons"><b>Next</b></button>
+
+            </div>
+
+
+            <!-- div that is visible when user reaches the end of the quiz and is displayed the results -->
+            <div id="quizEnd" hidden>
+
+                <!-- heading with id "message" displays a message depending on whether the user finishes the quiz on time or not. -->
+                <h1 id="message"></h1>
+
+                <!-- div and span elements that display the user's stats and performance -->
+                <div id="endCard" class="infoDisplay">
+                    <span id="endInfo"></span><br>
+                    <span id="comment"></span>
+                </div>
+
+
+                <!-- buttons on end screen -->
+                <div id="end_btns">
+
+                    <!-- button to play again -->
+                    <button id="replay_btn" class="buttons" onclick="replay();"><b>Replay</b></button>
+
+                    <!-- button to quit the quiz and go back to the starting page -->
+                    <a id="quit_btn" href="Quiz.html" class="buttons"><b>Quit</b></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- page editor link -->
+    <a id="dev_link" href="pageEditor3.html">Copyright &copy;2023 Cricket Gladiators. Page Editor Details: T. W. Inuka
+        Pasandul Perera</a>
+</body>
+
+</html>

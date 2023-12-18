@@ -1,0 +1,383 @@
+/* importing css styles for general styles like colours */
+@import "generalStyling.css";
+
+/* 
+Name: Thotagamuwa Widanage Inuka Pasandul Perera
+ID: 20221267, w1954040
+Group: O-2
+Role: Student 3
+ */
+
+
+/* styles for navigation bar made by student 2 */
+.nav {
+    display: grid;
+    background-color: #15295e;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 64px;
+}
+
+/* Style the links inside the navigation bar */
+.nav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 17px 23px;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 25px;
+}
+
+/* Change the color of links on hover */
+.nav a:hover {
+    background-color: #0a50a1;
+    color: #ffcc00;
+}
+
+/* Add a color to the active/current link */
+.nav a.active {
+    background-color: #ffcc00;
+    color: rgb(0, 0, 0);
+}
+
+#company_name {
+    position: relative;
+    top: -5px;
+    padding-inline-end: 100px;
+    font-size: 34px;
+    font-weight: bold;
+    color: #ffcc00;
+    pointer-events: none;
+
+}
+
+
+
+
+
+/* hidden radio button icon to only display radio label */
+input {
+    opacity: 0;
+    position: absolute;
+}
+
+/* when the user hovers on a radio button label, it changes the colour of the label too */
+input:hover+label {
+    cursor: pointer;
+
+    /* background is assigned the color code of the variable called "--color2" which was imported from the "generalStyling.css" stylesheet*/
+    background: var(--color2);
+
+    /* color is assigned the color code of the variable called "--color2" which was imported from the "generalStyling.css" stylesheet*/
+    color: var(--color1);
+
+    /* transition of the colour change when hovering is set to 0.2seconds */
+    transition: 0.2s;
+}
+
+/* applies same font and size to all elements */
+* {
+    font-size: 16px;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* displays an image in the background with no repeating while focusing on the center of the image. it also has a fixed state where if the page is scrolled, the image will not change or move */
+    background: url(images/background-image.jpg) no-repeat center center fixed;
+    background-size: cover;
+
+    /* disables scrolling to avoid problems with elements */
+    overflow: hidden;
+}
+
+h1 {
+    font-weight: normal;
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    padding: 10px;
+}
+
+h2 {
+    font-size: 19px;
+    font-weight: normal;
+}
+
+/* styling for radio labels */
+label {
+    display: flex;
+    justify-content: left;
+    width: 560px;
+    height: 40px;
+    background: var(--color1);
+
+    /* outline for label */
+    outline: rgb(69, 65, 79) solid 5px;
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
+    margin: 0 10px 0 0;
+    padding: 0 10px 0 10px;
+    align-items: center;
+    text-align: left;
+}
+
+/* styling for the answer numbers (ex: answer "a" , answer "b")*/
+.icons {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0 10px 0 0;
+    align-items: center;
+    text-align: center;
+    background: var(--color2);
+    color: var(--color1);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: var(--color3) solid 3px;
+}
+
+/* welcome message in the main quiz page */
+#welcomeMsg {
+    top: 20%;
+}
+
+/* styles for the "Instructions" heading in the instructions menu */
+#instructionsHeading {
+    border: var(--color3) solid 4px;
+    background: var(--color1);
+    border-radius: 50px;
+    top: 0px;
+}
+
+/* styling for the instructions menu */
+#instructions {
+    padding: 20px 20px 20px 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    background-color: var(--color2);
+    border-radius: 30px;
+    width: fit-content;
+    height: 300px;
+}
+
+/* main container which keeps the quiz card in place at the center of the page */
+.mainContainer {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* creates a card effect in the middle of the screen. this is the card that holds each element needed for the quiz */
+#quizCard {
+
+    position: relative;
+    display: flex;
+    background-color: var(--color1);
+    opacity: 0.9;
+
+    width: 200px;
+    height: fit-content;
+    max-height: 440px;
+    min-height: 30%;
+    border-radius: 50px;
+    border: var(--color2) solid 4px;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px 5px;
+}
+
+/* creates a shadow effect around the quiz card */
+#quizCard:hover {
+    box-shadow: 0 0 30px 10px;
+    transition: 500ms;
+}
+
+/* holds all elements needed for each question such as the question itself, the answers, the "next" button and the time and score display */
+#questionsContainer {
+    color: rgb(255, 255, 255);
+    margin: 10px 0;
+}
+
+/* holds the list of radio button labels that work as answers */
+#answersContainer {
+    margin: 10px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+#question {
+    text-align: center;
+}
+
+/* styles for the timer */
+#timer {
+    float: right;
+}
+
+/* class that styles all buttons in the quiz */
+.buttons {
+    width: 100px;
+    height: 50px;
+    border: var(--color3) solid 4px;
+    background: var(--color2);
+    color: var(--color1);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* hover effects for all buttons in the quiz */
+.buttons:hover {
+    cursor: pointer;
+    border: var(--color2) solid 4px;
+    background: var(--color3);
+    color: var(--color2);
+    transition: 0.2s;
+}
+
+/* styling for the instructions button in the main quiz page */
+#instructions_btn {
+    position: absolute;
+    bottom: 20%;
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 160px;
+    height: 65px;
+}
+
+/* button to start the quiz */
+#start_btn {
+    position: absolute;
+    bottom: 0px;
+    margin: 10px;
+}
+
+/* styling for the next question button */
+#next_btn {
+    float: right;
+    padding: 10px;
+    margin: 0 20px -10px 0;
+}
+
+/* styling for the checkmark and the cross which show if the chosen answer is correct or wrong */
+.checkmark_cross {
+    font-weight: bold;
+    font-size: 25px;
+    justify-content: right;
+    text-align: right;
+    position: absolute;
+    right: 2.5%;
+}
+
+/* the label of the correct answer will adapt this class' styles */
+.correct {
+    outline: #10d84f solid 4px;
+}
+
+/* the label of the answer will adapt this class' styles if its correct */
+.incorrect {
+    outline: #f00 solid 4px;
+}
+
+
+/* styling for card elements at the quiz end */
+#quizEnd {
+    margin: 40px 0 40px 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* heading with id "message" displays a message depending on whether the user finishes the quiz on time or not.  */
+#message {
+    top: 0px;
+    text-align: center;
+}
+
+/* styles for text displaying the user's performance and grade */
+#comment {
+    font-size: large;
+    font-weight: bolder;
+}
+
+/* styles for the buttons at the end screen */
+#end_btns {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* styles for the quit button */
+#quit_btn {
+    width: 100px;
+    height: 50px;
+    text-decoration: none;
+    position: absolute;
+    bottom: 10px;
+    left: 20%;
+}
+
+/* styles for the replay button */
+#replay_btn {
+    height: 56px;
+    position: absolute;
+    bottom: 10px;
+    right: 20%;
+}
+
+/* class for the div that holds the score, time remaining and the current question */
+.infoDisplay {
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: var(--color2);
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    color: var(--color1);
+}
+
+/* page editor link styling */
+#dev_link {
+    opacity: 0.8;
+    text-decoration: none;
+    box-shadow: 0 0 20px 10px #111111;
+    font-size: medium;
+    position: fixed;
+    bottom: 0%;
+    background-color: var(--color1);
+    ;
+    color: aliceblue;
+    width: auto;
+    height: 20px;
+    padding: 7px;
+    text-align: center;
+    align-items: center;
+    border-radius: 50px;
+    border: var(--color2) solid 4px;
+}
+
+/* page editor link hover styling */
+#dev_link:hover {
+    box-shadow: 0 0 30px 10px var(--color2);
+    transition: 500ms;
+    background-color: var(--color2);
+    color: var(--color1);
+}
